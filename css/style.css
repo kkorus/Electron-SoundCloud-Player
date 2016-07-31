@@ -1,3 +1,7 @@
+.title {
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
 .orange-button {
   display: inline-block;
   color: #FC561E;
@@ -16,6 +20,7 @@
   border-radius: 50px;
   color: #fff;
   float: left;
+  margin-top:15px
 }
 
 .sb-soundplayer-play-btn:hover {
