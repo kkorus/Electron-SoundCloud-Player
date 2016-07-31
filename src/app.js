@@ -4,7 +4,7 @@ import ProgressSoundPlayer from './components/ProgressSoundPlayer';
 import SC from 'node-soundcloud';
 import Loading from 'react-loading';
 
-var client_id = 'YOUR SOUNDCLOUD APP ID';
+var client_id = 'SOUNDCLOUD CLIENT ID';
 
 SC.init({
     id: client_id
@@ -70,4 +70,29 @@ class Main extends Component {
         );
     }
 
+    renderNoSearchResults() {
+        return (
+            <div id="no-results"></div>
+        );
+    }
+
+    renderSearchResults() {
+        return (
+            <div id="serach-results">
+                {this.state.searchResults.map(this.renderPlayer.bind(this)) }
+            </div>
+        );
+    }
+
+    renderPlayer(track) {
+        return (
+            <ProgressSoundPlayer
+                key={track.id}
+                clientId={client_id}
+                resolveUrl={track.permalink_url} />
+        );
+    }
 }
+
+var main = document.getElementById('main');
+ReactDOM.render(<Main />, main);

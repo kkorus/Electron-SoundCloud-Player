@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron main.js",
+    "compile": "browserify -t [ babelify --presets [ react es2015 ] ] src/app.js -o js/app.js"
   },
   "repository": {
     "type": "git",
